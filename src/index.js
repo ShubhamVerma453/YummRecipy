@@ -1,9 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import App from "./components/App"
+import {AppProvider} from "./context"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <h1>hello workld</h1>
+    <AppProvider>
+      <App />
+    </AppProvider>
   </React.StrictMode>
 );

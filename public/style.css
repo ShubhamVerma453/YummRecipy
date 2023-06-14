@@ -1,0 +1,17 @@
+/* mint-green : #08FFC8 */
+
+h1 {
+    color: red;
+    font-family: 'Hind Madurai', sans-serif;
+    font-weight: 700;
+    /* font-weight: 400; */
+}
+p {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 400;
+    /* font-weight: 200; */
+}
+
+.navbar{
+    background-color: #08FFC8;
+}
