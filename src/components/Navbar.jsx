@@ -1,22 +1,22 @@
-import {UseGloblaContext} from "../context"
+import { UseGloblaContext } from "../context"
 
 const NavBar = () => {
     return (
-        // <nav className="navbar navbar-expand-lg ">
-        //     <div className="container-fluid">
-        //         <a className="navbar-brand" href="#">Navbar</a>
-
-        //         <form className="d-flex" role="search">
-        //             {/* <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"> */}
-        //             <button className="btn btn-outline-success" type="submit">Search</button>
-        //         </form>
-
-        //     </div>
-        // </nav>
-            <h1>
-                { UseGloblaContext().name}
-            </h1>
+        <div className="regular-padding">
+            <h1><a className="navbar-brand" href="#">Yumm Recipe</a></h1>
+            <div className="">
+                <form className="" role="search">
+                    <input className="form-control" type="search" placeholder="Search" aria-label="Search" />
+                    <div className="text-center mt-3">
+                        <button className="btn me-5" type="submit">Search</button>
+                        <button className="btn" type="submit">Random</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     )
 }
+
+
 
 export default NavBar;
