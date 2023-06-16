@@ -11,17 +11,19 @@
     background-color: #F9F54B;
 }
 
-input:focus {
-    border-color: #F9F54B !important;
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px #F9F54B !important;
-}
-
 .btn{
     border-color: black !important;
     color: black;
     --bs-btn-hover-bg: #F9F54B;
 }
 
+/*         -------------------  Navbar  ---------------------            */
+input:focus {
+    border-color: #F9F54B !important;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px #F9F54B !important;
+}
+
+/*         -------------------  Meals  ---------------------            */
 .meal-card {
     padding: 3% !important; 
     border: none !important;
