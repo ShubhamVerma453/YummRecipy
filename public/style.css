@@ -21,3 +21,12 @@ input:focus {
     color: black;
     --bs-btn-hover-bg: #F9F54B;
 }
+
+.meal-card {
+    padding: 3% !important; 
+    border: none !important;
+}
+
+.meal-card img{
+    border-radius: 10%;
+}

@@ -3,16 +3,8 @@ import axios from "axios";
 
 const AppContext = React.createContext();
 
-const mealByFirstLetter = "https://www.themealdb.com/api/json/v1/1/search.php?f=b";
+const mealByFirstLetter = "https://www.themealdb.com/api/json/v1/1/search.php?f=c";
 const randomMeal = "https://www.themealdb.com/api/json/v1/1/random.php";
-
-// const [meal, setMeal] = useState([]);
-
-// function temp(x){
-//     setMeal(x);
-// }
-
-
 
 const AppProvider = ({children}) => {
     const [meals, setMeals] = useState([]);
