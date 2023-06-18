@@ -10,6 +10,8 @@ const AppProvider = ({ children }) => {
     const [meals, setMeals] = useState([]);
     const [loading, setLoading] = useState(false);
     const [searchTerm, setSearchTerm] = useState("");
+    const [show, setShow] = useState(false);
+    const [selectedMeal, setSelectedMeal] = useState(null);
 
     const fetchData = async (url) => {    // loads meal on basis of API
         setLoading(true);
@@ -31,6 +33,13 @@ const AppProvider = ({ children }) => {
         fetchData(randomMeal);
     }
 
+    const selectMeal = (idMeal) => {
+        const meal = meals.find(meal => meal.idMeal === idMeal);
+        setSelectedMeal(meal);
+        setShow(true);
+        // console.log(meal);
+    }
+
     useEffect(() => {        // loads some default meals on first render
         // console.log("data fetching");
         fetchData(mealURL);
@@ -41,7 +50,7 @@ const AppProvider = ({ children }) => {
         fetchData(`${mealURL}${searchTerm}`);
     }, [searchTerm])
 
-    return <AppContext.Provider value={{ loading, meals, setSearchTerm, fetchRandomMeal }} >
+    return <AppContext.Provider value={{ loading, meals, setSearchTerm, fetchRandomMeal, show, setShow, selectedMeal, selectMeal }} >
         {children}
     </AppContext.Provider>
 }

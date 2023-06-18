@@ -1,14 +1,14 @@
-import { useState } from 'react';
+import { UseGloblaContext } from "../context"
 import Modal from 'react-bootstrap/Modal';
 
-function MyModal({ title, recipy, image, source }) {
-  const [show, setShow] = useState(false);
+function MyModal() {
+  const { show, setShow, selectedMeal } = UseGloblaContext();
+  const { strMeal: title, strMealThumb: image, strInstructions: recipy, strSource: source } = selectedMeal;
+
   const onHide = () => setShow(false);
 
   return (
     <>
-      <button onClick={() => setShow(true)} className="btn">check</button>
-
       <Modal
         show={show}
         onHide={() => setShow(false)}

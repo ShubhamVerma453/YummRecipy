@@ -1,8 +1,7 @@
 import { UseGloblaContext } from "../context"
-import MyModal from "./MyModel";
 
 const Meals = () => {
-    const { loading, meals } = UseGloblaContext();
+    const { loading, meals, selectMeal } = UseGloblaContext();
     // console.log(meals);
     if (!loading) {                 // If fetchData for meals in context.jsx has completed and we have result
         if (meals.length === 0) {         // If meals is empty
@@ -22,18 +21,13 @@ const Meals = () => {
                         {
                             meals.map(singleMeal => {
                                 // console.log(singleMeal)
-                                const { idMeal, strMeal: title, strMealThumb: image, strInstructions, strSource } = singleMeal;
+                                const { idMeal, strMeal: title, strMealThumb: image, } = singleMeal;
                                 return (
                                     <div key={idMeal} className="card meal-card col-lg-3 col-md-4 col-sm-6" >
                                         <img src={image} className="card-img-top" alt="foodImage" />
                                         <div className="card-body">
                                             <h5 className="card-title">{title}</h5>
-                                            <MyModal
-                                                title={title}
-                                                recipy={strInstructions}
-                                                image={image}
-                                                source={strSource}
-                                            />
+                                            <button onClick={() => selectMeal(idMeal)} className="btn">check</button>
                                         </div>
                                     </div>
                                 )
