@@ -28,8 +28,8 @@ const Meals = () => {
                                         <div className="card-body text-start">
                                             <h5 className="card-title">{title}</h5>
                                             <div className="card-buttons">
-                                            <button onClick={() => selectMeal(idMeal)} className="btn">check</button>   
-                                            <i onClick={() => addtoFavorite(idMeal)} className="fa-regular fa-star fa-xl "></i> 
+                                                <button onClick={() => selectMeal(idMeal)} className="btn">check</button>
+                                                <i onClick={() => addtoFavorite(idMeal)} className="fa-regular fa-star fa-xl "></i>
                                             </div>
                                         </div>
                                     </div>

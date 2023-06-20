@@ -16,6 +16,7 @@
     color: black;
     --bs-btn-hover-bg: #F9F54B;
 }
+
 i:hover {
     color: #F9F54B;
 }
@@ -27,34 +28,35 @@ input:focus {
 }
 
 /*         -------------------  Favorite  ---------------------            */
-.favorite-box{
+.favorite-box {
     display: flex;
     gap: 2rem;
     flex-wrap: wrap;
 }
 
-.favorite-meal{
+.favorite-meal {
     text-align: center;
     display: flex;
     flex-direction: column;
 }
 
-.favorite-img{
+.favorite-img {
     width: 5rem;
     border-radius: 50%;
     border: 5px solid white;
 }
 
-.favorite-btn{
+.favorite-btn {
     border: none;
     background: inherit;
     padding-top: 0.2rem;
 }
 
-.favorite-btn:hover{
+.favorite-btn:hover {
     color: white;
     font-weight: 400;
 }
+
 /*         -------------------  Meals  ---------------------            */
 .meal-card {
     padding: 3% !important;
@@ -66,10 +68,11 @@ input:focus {
 }
 
 
-.card-buttons{
+.card-buttons {
     display: flex;
     justify-content: space-between;
 }
+
 /*         -------------------  Modal  ---------------------            */
 .model-img {
     height: 300px;

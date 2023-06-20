@@ -7,12 +7,18 @@ const mealURL = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
 const randomMeal = "https://www.themealdb.com/api/json/v1/1/random.php";
 
 const AppProvider = ({ children }) => {
+    const getFavoriteFromLocal = () => {
+        let favorite = localStorage.getItem("favoriteMeals");
+        if (favorite) return JSON.parse(localStorage.getItem("favoriteMeals"));
+        return [];
+    }
+
     const [meals, setMeals] = useState([]);
     const [loading, setLoading] = useState(false);
     const [searchTerm, setSearchTerm] = useState("");
     const [show, setShow] = useState(false);
     const [selectedMeal, setSelectedMeal] = useState(null);
-    const [favorite, setFavorite] = useState([]);
+    const [favorite, setFavorite] = useState(getFavoriteFromLocal());
 
     const fetchData = async (url) => {    // loads meal on basis of API
         setLoading(true);
@@ -34,9 +40,10 @@ const AppProvider = ({ children }) => {
         fetchData(randomMeal);
     }
 
+
     const selectMeal = (idMeal) => {
         let meal = meals.find(meal => meal.idMeal === idMeal);
-        if(!meal)  meal = favorite.find(meal => meal.idMeal === idMeal);
+        if (!meal) meal = favorite.find(meal => meal.idMeal === idMeal);
         setSelectedMeal(meal);
         setShow(true);
         // console.log(meal);
@@ -44,14 +51,16 @@ const AppProvider = ({ children }) => {
 
     const addtoFavorite = (idMeal) => {
         const isAlreadyAdded = favorite.find(meal => meal.idMeal === idMeal);
-        if(isAlreadyAdded)  return;
+        if (isAlreadyAdded) return;
         const newFavoriteMeal = meals.find(meal => meal.idMeal === idMeal);
         setFavorite([...favorite, newFavoriteMeal]);
+        localStorage.setItem("favoriteMeals", JSON.stringify([...favorite, newFavoriteMeal]));
     }
 
     const removeFromFavorite = (idMeal) => {
         const updatedFavoriteMeal = favorite.filter(meal => meal.idMeal != idMeal);
         setFavorite(updatedFavoriteMeal);
+        localStorage.setItem("favoriteMeals", JSON.stringify(updatedFavoriteMeal));
     }
 
     useEffect(() => {        // loads some default meals on first render

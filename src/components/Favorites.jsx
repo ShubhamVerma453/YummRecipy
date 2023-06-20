@@ -1,30 +1,7 @@
 import { UseGloblaContext } from "../context"
 
 const Favorites = () => {
-    const {favorite, removeFromFavorite, selectMeal} = UseGloblaContext();
-    // const favorites = [
-    //     {image : "https://www.themealdb.com/images/media/meals/b79r6f1585566277.jpg"},
-    //     {image : "https://www.themealdb.com/images/media/meals/b79r6f1585566277.jpg"},
-    //     {image : "https://www.themealdb.com/images/media/meals/b79r6f1585566277.jpg"},
-    //     {image : "https://www.themealdb.com/images/media/meals/b79r6f1585566277.jpg"},
-    //     {image : "https://www.themealdb.com/images/media/meals/b79r6f1585566277.jpg"},
-    //     {image : "https://www.themealdb.com/images/media/meals/b79r6f1585566277.jpg"},
-    //     {image : "https://www.themealdb.com/images/media/meals/b79r6f1585566277.jpg"},
-    //     {image : "https://www.themealdb.com/images/media/meals/b79r6f1585566277.jpg"},
-    //     {image : "https://www.themealdb.com/images/media/meals/b79r6f1585566277.jpg"},
-    //     {image : "https://www.themealdb.com/images/media/meals/b79r6f1585566277.jpg"},
-    //     {image : "https://www.themealdb.com/images/media/meals/b79r6f1585566277.jpg"},
-    //     {image : "https://www.themealdb.com/images/media/meals/b79r6f1585566277.jpg"},
-    //     {image : "https://www.themealdb.com/images/media/meals/b79r6f1585566277.jpg"},
-    //     {image : "https://www.themealdb.com/images/media/meals/b79r6f1585566277.jpg"},
-    //     {image : "https://www.themealdb.com/images/media/meals/b79r6f1585566277.jpg"},
-    //     {image : "https://www.themealdb.com/images/media/meals/b79r6f1585566277.jpg"},
-    //     {image : "https://www.themealdb.com/images/media/meals/b79r6f1585566277.jpg"},
-    //     {image : "https://www.themealdb.com/images/media/meals/b79r6f1585566277.jpg"},
-    //     {image : "https://www.themealdb.com/images/media/meals/b79r6f1585566277.jpg"},
-    //     {image : "https://www.themealdb.com/images/media/meals/b79r6f1585566277.jpg"}
-    // ]
-    // key={idMeal}
+    const { favorite, removeFromFavorite, selectMeal } = UseGloblaContext();
     return (
         <div className="regular-padding bg-coloured">
             <h3>Favorites</h3>
