@@ -1,8 +1,14 @@
-/* mint-green : #08FFC8 */
-/* yellow : #FEFF86 */
-/* yellow : #F9F54B */
 /* font-family: 'Hind Madurai', sans-serif;  700   400 */
 /* font-family: 'Outfit', sans-serif;        400   200 */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Hind Madurai', sans-serif;
+}
+
+p, a, input, .btn {
+    font-family: 'Outfit', sans-serif !important;
+}
+
 .regular-padding {
     padding: 1rem 5rem;
 }
@@ -22,6 +28,10 @@ i:hover {
 }
 
 /*         -------------------  Navbar  ---------------------            */
+.navbar-brand {
+    font-weight: 700 !important;
+}
+
 input:focus {
     border-color: #F9F54B !important;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px #F9F54B !important;
