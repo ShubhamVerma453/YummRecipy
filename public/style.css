@@ -16,6 +16,9 @@
     color: black;
     --bs-btn-hover-bg: #F9F54B;
 }
+i:hover {
+    color: #F9F54B;
+}
 
 /*         -------------------  Navbar  ---------------------            */
 input:focus {
@@ -23,6 +26,35 @@ input:focus {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px #F9F54B !important;
 }
 
+/*         -------------------  Favorite  ---------------------            */
+.favorite-box{
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.favorite-meal{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.favorite-img{
+    width: 5rem;
+    border-radius: 50%;
+    border: 5px solid white;
+}
+
+.favorite-btn{
+    border: none;
+    background: inherit;
+    padding-top: 0.2rem;
+}
+
+.favorite-btn:hover{
+    color: white;
+    font-weight: 400;
+}
 /*         -------------------  Meals  ---------------------            */
 .meal-card {
     padding: 3% !important;
@@ -33,6 +65,11 @@ input:focus {
     border-radius: 10%;
 }
 
+
+.card-buttons{
+    display: flex;
+    justify-content: space-between;
+}
 /*         -------------------  Modal  ---------------------            */
 .model-img {
     height: 300px;

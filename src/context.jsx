@@ -12,6 +12,7 @@ const AppProvider = ({ children }) => {
     const [searchTerm, setSearchTerm] = useState("");
     const [show, setShow] = useState(false);
     const [selectedMeal, setSelectedMeal] = useState(null);
+    const [favorite, setFavorite] = useState([]);
 
     const fetchData = async (url) => {    // loads meal on basis of API
         setLoading(true);
@@ -34,10 +35,23 @@ const AppProvider = ({ children }) => {
     }
 
     const selectMeal = (idMeal) => {
-        const meal = meals.find(meal => meal.idMeal === idMeal);
+        let meal = meals.find(meal => meal.idMeal === idMeal);
+        if(!meal)  meal = favorite.find(meal => meal.idMeal === idMeal);
         setSelectedMeal(meal);
         setShow(true);
         // console.log(meal);
+    }
+
+    const addtoFavorite = (idMeal) => {
+        const isAlreadyAdded = favorite.find(meal => meal.idMeal === idMeal);
+        if(isAlreadyAdded)  return;
+        const newFavoriteMeal = meals.find(meal => meal.idMeal === idMeal);
+        setFavorite([...favorite, newFavoriteMeal]);
+    }
+
+    const removeFromFavorite = (idMeal) => {
+        const updatedFavoriteMeal = favorite.filter(meal => meal.idMeal != idMeal);
+        setFavorite(updatedFavoriteMeal);
     }
 
     useEffect(() => {        // loads some default meals on first render
@@ -50,7 +64,7 @@ const AppProvider = ({ children }) => {
         fetchData(`${mealURL}${searchTerm}`);
     }, [searchTerm])
 
-    return <AppContext.Provider value={{ loading, meals, setSearchTerm, fetchRandomMeal, show, setShow, selectedMeal, selectMeal }} >
+    return <AppContext.Provider value={{ loading, meals, setSearchTerm, fetchRandomMeal, show, setShow, selectedMeal, selectMeal, favorite, addtoFavorite, removeFromFavorite }} >
         {children}
     </AppContext.Provider>
 }

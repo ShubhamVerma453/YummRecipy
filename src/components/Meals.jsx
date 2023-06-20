@@ -1,7 +1,7 @@
 import { UseGloblaContext } from "../context"
 
 const Meals = () => {
-    const { loading, meals, selectMeal } = UseGloblaContext();
+    const { loading, meals, selectMeal, addtoFavorite } = UseGloblaContext();
     // console.log(meals);
     if (!loading) {                 // If fetchData for meals in context.jsx has completed and we have result
         if (meals.length === 0) {         // If meals is empty
@@ -25,9 +25,12 @@ const Meals = () => {
                                 return (
                                     <div key={idMeal} className="card meal-card col-lg-3 col-md-4 col-sm-6" >
                                         <img src={image} className="card-img-top" alt="foodImage" />
-                                        <div className="card-body">
+                                        <div className="card-body text-start">
                                             <h5 className="card-title">{title}</h5>
-                                            <button onClick={() => selectMeal(idMeal)} className="btn">check</button>
+                                            <div className="card-buttons">
+                                            <button onClick={() => selectMeal(idMeal)} className="btn">check</button>   
+                                            <i onClick={() => addtoFavorite(idMeal)} className="fa-regular fa-star fa-xl "></i> 
+                                            </div>
                                         </div>
                                     </div>
                                 )
